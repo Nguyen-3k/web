@@ -1,0 +1,288 @@
+/* Thiết lập các biến màu sắc theo chủ đề Xám Xanh (Blue-gray) */
+:root {
+    --primary: #455a64;       /* Xám xanh đậm */
+    --primary-light: #78909c; /* Xám xanh nhạt */
+    --primary-dark: #263238;  /* Xám đen */
+    --bg-body: #eceff1;       /* Nền trang xám nhạt */
+    --bg-box: #ffffff;        /* Nền trắng cho nội dung */
+    --text-main: #37474f;     /* Màu chữ chính */
+    --footer-bg: #cfd8dc;     /* Nền xám tiêu chuẩn cho footer */
+}
+
+/* Reset CSS cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: white;
+    object-fit: cover;
+    border: 2px solid var(--primary-light);
+}
+
+.uni-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    color: var(--bg-body);
+    transform: translateY(-2px); /* Hiệu ứng nảy nhẹ khi hover */
+}
+
+/* ================= BODY ================= */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* Cho phép các ô rơi xuống dòng khi thu nhỏ màn hình */
+}
+
+/* Định dạng 2 khối chữ nhật dọc */
+.box {
+    flex: 1;
+    min-width: 300px; 
+    background-color: var(--bg-box);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid var(--primary-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng nhấc nổi khối nội dung khi di chuột vào */
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.box h2 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--primary-light);
+    font-size: 1.8rem;
+}
+
+.box p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Hình ảnh minh họa */
+.image-container {
+    margin-top: 25px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.illustration {
+    width: 100%;display: block;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+/* Hiệu ứng phóng to ảnh khi di chuột */
+.image-container:hover .illustration {
+    transform: scale(1.05);
+}
+
+/* Danh sách kỹ năng */
+.skills-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.skills-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+
+.skills-list li::before {
+    content: "▹"; /* Chấm list cách điệu */
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ================= FOOTER ================= */
+/* ================= FOOTER ================= */
+footer {
+    background-color: var(--footer-bg);
+    padding: 20px 15px; /* Giảm khoảng cách padding trên/dưới từ 40px xuống 20px */
+    margin-top: 40px;   /* Giảm khoảng cách với phần body bên trên */
+    border-top: 3px solid var(--primary);
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content h3 {
+    color: var(--primary-dark);
+    margin-bottom: 12px; /* Giảm khoảng cách dưới của tiêu đề */
+    font-size: 1.2rem;   /* Giảm cỡ chữ tiêu đề (cũ là 1.5rem) */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-details p {
+    margin-bottom: 6px;  /* Giảm khoảng cách giữa các dòng thông tin */
+    font-size: 0.95rem;  /* Giảm cỡ chữ nội dung (cũ là 1.1rem) */
+}
+
+.contact-details a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.thank-you {
+    margin-top: 15px;    /* Giảm khoảng cách phía trên lời cảm ơn */
+    font-size: 1rem;     /* Giảm cỡ chữ lời cảm ơn (cũ là 1.2rem) */
+    font-style: italic;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+.menu-checkbox, .menu-icon {
+    display: none;
+}
+
+/* Kích thước và hiệu ứng cho biểu tượng menu ☰ */
+.menu-icon {
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+/* Cập nhật lại phần Responsive cho điện thoại (dưới 768px) */
+@media screen and (max-width: 768px) {
+    /* Đảm bảo header giữ nguyên thanh ngang, logo bên trái, nút ☰ bên phải */
+    .sticky-header {
+        padding: 15px 20px;
+        flex-direction: row; 
+    }
+
+    /* Hiển thị biểu tượng ☰ */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Định dạng menu xổ xuống (mặc định ẩn) */
+    .main-nav {
+        position: absolute;
+        top: 100%; /* Nằm ngay dưới header */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-dark);
+        overflow: hidden;
+        max-height: 0; /* Ẩn menu bằng cách cho chiều cao = 0 */
+        transition: max-height 0.4s ease-out; /* Hiệu ứng trượt mượt mà */
+    }
+
+    /* Chuyển các link thành danh sách dọc */
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #37474f;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    /* ================= KỸ THUẬT MENU XỔ XUỐNG ================= */
+    /* Khi checkbox được check (người dùng bấm vào ☰), tăng chiều cao để hiện menu */
+    .menu-checkbox:checked ~ .main-nav {
+        max-height: 300px; /* Chiều cao đủ lớn để chứa các mục */
+    }
+
+    /* Xoay nhẹ biểu tượng ☰ khi mở menu cho đẹp mắt */
+    .menu-checkbox:checked ~ .menu-icon {
+        transform: rotate(90deg);
+    }
+
+    /* ======= RESPONSIVE CHO BODY ======= */
+    .content-wrapper {
+        flex-direction: column; /* Xếp dọc 2 ô trên điện thoại */
+    }
+
+    .box {
+        padding: 25px; /* Giảm padding trên màn hình nhỏ */
+    }
+}
